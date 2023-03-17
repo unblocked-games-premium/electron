@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<ModulePrefs title="ElectronDash" />
+<Content type="html"><![CDATA[
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Electron Dash</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/unblocked-games-premium/electron@main/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/unblocked-games-premium/electron@main/style2.css">
+    <script src="https://cdn.jsdelivr.net/gh/unblocked-games-premium/electron@main/dummy.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/unblocked-games-premium/electron@main/unity-mod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/unblocked-games-premium/electron@main/UnityProgress.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/unblocked-games-premium/electron@main/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate(
+        "gameContainer",
+        "https://cdn.jsdelivr.net/gh/unblocked-games-premium/electron@main/ElectronDash.json",
+        {
+            onProgress: UnityProgress,Module:{
+                onRuntimeInitialized: function() {
+                    UnityProgress(gameInstance, "complete")
+                }
+            }
+        });
+    </script>
+</head>
+<body style="overflow:hidden; margin:0; padding:0;">
+    <div id="gameView" class="webgl-content" style="position: absolute; width: 100%; height: 100%; margin: 0px; padding:0px;">
+        <div id="gameContainer" style="width: 100%; height: 100%; margin: 0px; padding:0px;"></div>
+    </div>
+</body>
+</html>
+]]></Content>
+</Module>
